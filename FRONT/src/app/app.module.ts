@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './framework-components/header/header.component';
 import { FooterComponent } from './framework-components/footer/footer.component';
-import { HomeComponent } from './project-components/home/home.component';
-import { ShareHouseComponent } from './project-components/share-house/share-house.component';
+//import { HomeComponent } from './project-components/home/home.component';
+//import { ShareHouseComponent } from './project-components/share-house/share-house.component';
 import { FourOhFourComponent } from './framework-components/four-oh-four/four-oh-four.component';
 
 @NgModule({
@@ -15,8 +15,8 @@ import { FourOhFourComponent } from './framework-components/four-oh-four/four-oh
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    ShareHouseComponent,
+    //HomeComponent,
+    //ShareHouseComponent,
     FourOhFourComponent
   ],
   imports: [
