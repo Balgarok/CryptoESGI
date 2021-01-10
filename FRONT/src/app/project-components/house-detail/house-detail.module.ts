@@ -15,4 +15,4 @@ import { HouseDetailComponent } from './house-detail.component';
         HouseDetailRoutingModule
     ]
 })
-export class HomeModule { }
+export class HouseDetailModule { }
