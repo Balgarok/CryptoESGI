@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-house',
@@ -7,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HouseComponent implements OnInit {
 
-  title: string = 'Un bel appartement';
+  @Input() title: string = '';
+  @Input() owner: string = '';
+  @Input() adress: string = '';
+  @Input() price: string = '';
+  @Input() picture: string = '';
 
+  /*
+  title: string = 'Un bel appartement';
+  owner: string = 'Proprio';
+  adress: string = '120 rue Pasteur';
+  price: string = '10';
+  picture: string = 'test';
+*/ 
   constructor() { }
 
   ngOnInit(): void {

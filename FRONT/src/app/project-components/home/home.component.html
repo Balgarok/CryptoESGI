@@ -6,22 +6,12 @@
             <div class="col-md-12">
                 <div style="background-color: white;">
                     <ul class="list-group">
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
-                        <app-house></app-house>
+                        <app-house *ngFor="let house of houses"
+                        [title]="house.title"
+                        [owner]="house.owner"
+                        [adress]="house.adress"
+                        [price]="house.price"
+                        [picture]="house.picture"></app-house>
                     </ul>
                 </div>
             </div>
