@@ -9,6 +9,7 @@ import { FooterComponent } from './framework-components/footer/footer.component'
 //import { HomeComponent } from './project-components/home/home.component';
 //import { ShareHouseComponent } from './project-components/share-house/share-house.component';
 import { FourOhFourComponent } from './framework-components/four-oh-four/four-oh-four.component';
+//import { HouseComponent } from './project-components/house/house.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FourOhFourComponent } from './framework-components/four-oh-four/four-oh
     FooterComponent,
     //HomeComponent,
     //ShareHouseComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    //HouseComponent
   ],
   imports: [
     BrowserModule,
