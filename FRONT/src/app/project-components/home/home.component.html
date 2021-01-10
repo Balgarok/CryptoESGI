@@ -6,7 +6,8 @@
             <div class="col-md-12">
                 <div style="background-color: white;">
                     <ul class="list-group">
-                        <app-house *ngFor="let house of houses"
+                        <app-house *ngFor="let house of houses; let i = index"
+                        [index]="i"
                         [title]="house.title"
                         [owner]="house.owner"
                         [adress]="house.adress"

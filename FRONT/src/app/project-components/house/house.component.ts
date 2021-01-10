@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HouseComponent implements OnInit {
 
+  @Input() index: number = 0;
   @Input() title: string = '';
   @Input() owner: string = '';
   @Input() adress: string = '';
