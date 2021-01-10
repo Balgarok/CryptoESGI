@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
-//import { House } from '../_models/house.model';
-//import { Subject } from 'rxjs/Subject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HouseService {
-
-  //housesSubject = new Subject<any[]>();
 
   houses = [
     {
