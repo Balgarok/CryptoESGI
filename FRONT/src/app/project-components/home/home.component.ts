@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HouseService } from 'src/app/_services/house.service';
 
 @Component({
   selector: 'app-home',
@@ -7,40 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  houses = [
-    {
-      title: 'Un bel appartement',
-      owner: 'Proprio',
-      adress: '120 rue Pasteur',
-      price: '3',
-      picture: 'test'
-    },
-    {
-      title: 'Petit nid douillet',
-      owner: 'Moi',
-      adress: 'Quelque part',
-      price: '99',
-      picture: 'test'
-    },
-    {
-      title: 'Case Bleue',
-      owner: 'Monopoly',
-      adress: 'Rue de la Paix',
-      price: '100',
-      picture: 'test'
-    },
-    {
-      title: 'Bientôt chez vous',
-      owner: 'D. Trump',
-      adress: 'Maison Blanche',
-      price: '1 Milliard',
-      picture: 'test'
-    }
-  ];
+  houses: any[] = [];
 
-  constructor() { }
+  constructor(private houseService: HouseService) { }
 
   ngOnInit(): void {
+    this.houses = this.houseService.houses
   }
 
 }
