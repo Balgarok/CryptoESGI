@@ -4,7 +4,7 @@
         <h2 style="text-align: center; color:crimson">{{ this.curHouse.title }}</h2>
         <div class="row">
             <div class="col-md-12">
-               <img src="../../../assets/img/936c20b968e1827f0c141ccb57152b6ef809e18e_rueil-carre-arsenal-appartement-web-min.webp" alt="img_appartement" height="500" width="1100">
+               <img src="../../../assets/img/{{ this.curHouse.picture }}" alt="img_appartement" height="500" width="1100">
             </div>
         </div>
         <hr>
@@ -18,20 +18,20 @@
         <hr>
         <div class="row">
             <div class="col-md-4">
-                <p>Taille : 60 <b>m²</b></p>
+                <p>Taille : {{ this.curHouse.size}} <b>m²</b></p>
             </div>
             <div class="col-md-4">    
-                <p>Nombre de chambres : 4</p>
+                <p>Nombre de chambres : {{ this.curHouse.nbBedRoom }}</p>
             </div>
             <div class="col-md-4">
-                <p>Nombre de pièces : 4</p>
+                <p>Nombre de pièces : {{ this.curHouse.nbRoom }}</p>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-12">
                 <b>A propos : </b>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum veniam numquam libero dicta illo minima fuga voluptate. Nobis architecto corrupti praesentium nulla minima debitis ducimus tempore obcaecati quia voluptatum labore, corporis quaerat hic laudantium? Alias repudiandae recusandae quasi necessitatibus cumque, doloremque itaque nostrum voluptates dolorem voluptate! Omnis, neque provident.</p>
+                <p>{{ this.curHouse.about }}</p>
             </div>
         </div>
     </div>

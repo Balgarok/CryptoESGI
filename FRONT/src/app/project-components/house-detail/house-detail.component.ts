@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+//import { House } from 'src/app/_models/house.model';
 import { HouseService } from 'src/app/_services/house.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { HouseService } from 'src/app/_services/house.service';
 export class HouseDetailComponent implements OnInit {
 
   index: number = 0;
-  curHouse: any;
+  curHouse: any; //House = new House();
 
   constructor(private route: ActivatedRoute,private houseService: HouseService) { }
 

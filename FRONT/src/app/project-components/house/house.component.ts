@@ -14,13 +14,8 @@ export class HouseComponent implements OnInit {
   @Input() price: string = '';
   @Input() picture: string = '';
 
-  /*
-  title: string = 'Un bel appartement';
-  owner: string = 'Proprio';
-  adress: string = '120 rue Pasteur';
-  price: string = '10';
-  picture: string = 'test';
-*/ 
+  //imgPath = '936c20b968e1827f0c141ccb57152b6ef809e18e_rueil-carre-arsenal-appartement-web-min.webp';
+
   constructor() { }
 
   ngOnInit(): void {
