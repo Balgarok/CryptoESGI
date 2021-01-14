@@ -1,1 +1,24 @@
-<p>home works!</p>
+<h1>Liste des biens immobilier : </h1>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <ul class="list-group">
+                        <app-house *ngFor="let house of houses; let i = index"
+                        [index]="i"
+                        [title]="house.title"
+                        [owner]="house.owner"
+                        [adress]="house.adress"
+                        [price]="house.price"
+                        [picture]="house.picture"></app-house>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<br>

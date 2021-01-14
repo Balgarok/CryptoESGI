@@ -1,0 +1,18 @@
+<a [routerLink]="['/house-detail',this.index]" routerLinkActive="active" style="text-decoration: none;">
+    <li class="list-group-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"><img src='../../../assets/img/{{picture}}' alt="img_appartement" height="200" width="400"></div>
+                <div class="col-md-6">
+                    <h4 style="color: crimson;">{{ title }}</h4>
+                    <br>
+                    <h4>Propriétaire : {{ owner }}</h4>
+                    <hr>
+                    <h4>Adresse : {{ adress }}</h4>
+                    <hr>
+                    <h4>Prix : <span style="color:darkgreen;"> {{ price }} <b>ETH</b></span></h4>
+                </div>
+            </div>
+        </div>
+    </li>
+</a>

@@ -6,23 +6,21 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './framework-components/header/header.component';
 import { FooterComponent } from './framework-components/footer/footer.component';
-//import { HomeComponent } from './project-components/home/home.component';
-//import { ShareHouseComponent } from './project-components/share-house/share-house.component';
 import { FourOhFourComponent } from './framework-components/four-oh-four/four-oh-four.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    //HomeComponent,
-    //ShareHouseComponent,
     FourOhFourComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

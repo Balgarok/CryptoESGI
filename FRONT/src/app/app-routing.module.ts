@@ -6,6 +6,7 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo:'home'},
   {path: 'home', loadChildren:() => import('./project-components/home/home.module').then(m => m.HomeModule)},
   {path: 'share-house', loadChildren:() => import('./project-components/share-house/share-house.module').then(m => m.ShareHouseModule)},
+  {path: 'house-detail/:index', loadChildren:() => import('./project-components/house-detail/house-detail.module').then(m => m.HouseDetailModule)},
   {path: '**', component: FourOhFourComponent}
 ];
 
