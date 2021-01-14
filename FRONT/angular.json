@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "FRONT"
+  "defaultProject": "FRONT",
+  "cli": {
+    "analytics": false
+  }
 }
