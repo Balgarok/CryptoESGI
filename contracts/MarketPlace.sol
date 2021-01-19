@@ -2,8 +2,12 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract MarketPlace{
-    uint public realtyCount = 0;
+    uint public itemCount = 0;
     mapping (uint => Realty) public realties;
+    struct Other{
+        string title;
+        string info;
+    }
     struct Realty {
         uint id;
         string title;
@@ -15,7 +19,8 @@ contract MarketPlace{
         uint256 size;
         uint nbRoom;
         uint nbBedroom;
-        //string[] others;
+        string pictureUrl;
+        //Other[] others;
     
     }
     event RealtyCreated(
@@ -28,8 +33,9 @@ contract MarketPlace{
         string location,
         uint256 size,
         uint nbRoom,
-        uint nbBedroom
-        //string[] others
+        uint nbBedroom,
+        string pictureUrl//,
+        //Other[] others
     );
 
     event RealtySelled(
@@ -42,16 +48,17 @@ contract MarketPlace{
         string location,
         uint256 size,
         uint nbRoom,
-        uint nbBedroom
-        //string[] others
+        uint nbBedroom,
+        string pictureUrl
+        //Other[] others
     );
 
-    function sell(string memory _title, string memory _description, string memory _location, uint _size, uint _nbRoom, uint _nbBedroom, uint _price) public {
+    function sell(string memory _title, string memory _description, string memory _location, uint _size, uint _nbRoom, uint _nbBedroom, uint _price, string memory _pictureUrl) public {
         require(bytes(_title).length > 0);
         require(_price > 0);
-        realtyCount++;
-        realties[realtyCount] = Realty(realtyCount, _title, _description, _price, msg.sender, false, _location, _size, _nbRoom, _nbBedroom);
-        emit RealtyCreated(realtyCount, _title, _description, _price, msg.sender, false, _location, _size, _nbRoom, _nbBedroom);
+        itemCount++;
+        realties[itemCount] = Realty(itemCount, _title, _description, _price, msg.sender, false, _location, _size, _nbRoom, _nbBedroom, _pictureUrl);
+        emit RealtyCreated(itemCount, _title, _description, _price, msg.sender, false, _location, _size, _nbRoom, _nbBedroom, _pictureUrl);
 
     }
     function purchase(uint _id) public payable {
@@ -71,7 +78,7 @@ contract MarketPlace{
         // Pay the seller
         address(uint160(_seller)).transfer(msg.value);
         // Trigger the event        
-        emit RealtySelled(_realty.id, _realty.title, _realty.description, _realty.price, _realty.owner, _realty.purchased, _realty.location, _realty.size, _realty.nbRoom, _realty.nbBedroom);
+        emit RealtySelled(_realty.id, _realty.title, _realty.description, _realty.price, _realty.owner, _realty.purchased, _realty.location, _realty.size, _realty.nbRoom, _realty.nbBedroom, _realty.pictureUrl);
     }
 
 }
