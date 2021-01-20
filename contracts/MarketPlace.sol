@@ -57,6 +57,7 @@ contract MarketPlace{
         require(bytes(_title).length > 0);
         require(_price > 0);
         itemCount++;
+        //realties.size
         realties[itemCount] = Realty(itemCount, _title, _description, _price, msg.sender, false, _location, _size, _nbRoom, _nbBedroom, _pictureUrl);
         emit RealtyCreated(itemCount, _title, _description, _price, msg.sender, false, _location, _size, _nbRoom, _nbBedroom, _pictureUrl);
 

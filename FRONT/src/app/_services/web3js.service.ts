@@ -18,7 +18,7 @@ export class Web3JSService {
   private enable: any;
 
   constructor() {
-    /*if (window.ethereum === undefined) {
+    if (window.ethereum === undefined) {
       alert('Non-Ethereum browser detected. Install MetaMask');
     } else {
       if (typeof window.web3 !== 'undefined') {
@@ -31,7 +31,7 @@ export class Web3JSService {
       console.log('transfer.service :: constructor :: this.web3');
       console.log(this.web3);
       this.enable = this.enableMetaMaskAccount();
-    }*/
+    }
 
   }
 
