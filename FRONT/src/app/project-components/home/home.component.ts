@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.houses = this.getHouses()
-    //this.web3JS.transferEther(10)
+    this.web3JS.transferEther(10)
     //
     /*this.web3JS.checkAndInstantiateWeb3()
     .then((checkConn: any) => {
