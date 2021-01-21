@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
                     this.marketPlace.methods.itemCount()
                       .call()
                       .then((value:number) => {
-                        /*for (let i = 1; i <= value; i++) {
+                        for (let i = 1; i <= value; i++) {
                           const product = this.marketPlace.methods.realties(i)
                             .call()
                             .then((realties: any) => {
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
                               this.totalProduct.push(realties);
                               //this.cd.detectChanges();
                             });
-                        }*/
+                        }
                         console.log('totalProduct ', this.totalProduct);
                       });
                   }

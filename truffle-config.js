@@ -59,7 +59,7 @@ module.exports = {
       kovan: {
         provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/a69d08efce0b46a292473f9ebdbc066e`),
         network_id: 42,
-        gas: 3000000,
+        //gas: 3000000,
         gasPrice: 10000000000
     },/**/
     // Useful for deploying to a public network.
@@ -67,7 +67,7 @@ module.exports = {
     ropsten: {
      provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/a69d08efce0b46a292473f9ebdbc066e`),
      network_id: 3,       // Ropsten's id
-     gas: 5500000,        // Ropsten has a lower block limit than mainnet
+     gas: 10000000000,        // Ropsten has a lower block limit than mainnet
      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
