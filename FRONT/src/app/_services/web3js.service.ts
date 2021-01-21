@@ -118,7 +118,7 @@ export class Web3JSService {
       marketPlaceContract.setProvider(that.web3);
       console.log('web3.service :: transferEther :: transferContract');
       console.log(marketPlaceContract);
-      /*marketPlaceContract.deployed().then(function(instance:any) {
+      marketPlaceContract.deployed().then(function(instance:any) {
         return instance.pay(
           value.marketPlaceAddress,
           {
