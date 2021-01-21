@@ -1,4 +1,4 @@
-import { Injectable} from './import.service';
+import {Injectable} from '@angular/core';
 
 
 import Web3 from 'web3';
