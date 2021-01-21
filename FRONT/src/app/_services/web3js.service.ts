@@ -97,12 +97,12 @@ export class Web3JSService {
     return new Promise((resolve, reject) => {
       console.log('web3.service :: transferEther :: marketPlaceArtifacts');
       console.log(marketPlaceArtifacts);
-      //const contract = require('@truffle/contract');
-      /*const marketPlaceContract = contract(marketPlaceArtifacts);
+      const contract = require('@truffle/contract');
+      const marketPlaceContract = contract(marketPlaceArtifacts);
       marketPlaceContract.setProvider(that.web3);
       console.log('web3.service :: transferEther :: transferContract');
       console.log(marketPlaceContract);
-      /*marketPlaceContract.deployed().then(function(instance:any) {
+      marketPlaceContract.deployed().then(function(instance:any) {
         return instance.pay(
           value.marketPlaceAddress,
           {
@@ -116,7 +116,7 @@ export class Web3JSService {
       }).catch(function(error:any) {
         console.log(error);
         return reject('web3.service error');
-      });*/
+      });
     });
   }
 
