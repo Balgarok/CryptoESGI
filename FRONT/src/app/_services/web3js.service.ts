@@ -90,6 +90,21 @@ export class Web3JSService {
       });
     }) as Promise<any>;
   }
+  public getContract() {
+    return new Promise((resolve) => {
+      const web3 = window.web3;
+      let networkId;
+      web3.eth.net.getId()
+        .then((netId: any) => {
+          networkId = netId;
+          const abi = marketPlaceArtifacts.abi;
+          const networkAddress = marketPlaceArtifacts.networks[networkId].address;
+          const marketplace = new web3.eth.Contract(abi, networkAddress);
+          resolve(marketplace);
+        });
+    });
+  }
+
   transferEther(value: any) {
     const that = this;
     console.log('web3.service :: transferEther to: ' +
@@ -97,6 +112,7 @@ export class Web3JSService {
     return new Promise((resolve, reject) => {
       console.log('web3.service :: transferEther :: marketPlaceArtifacts');
       console.log(marketPlaceArtifacts);
+
       //const contract = require('@truffle/contract');
       /*const marketPlaceContract = contract(marketPlaceArtifacts);
       marketPlaceContract.setProvider(that.web3);
