@@ -1,6 +1,6 @@
-import { Injectable} from '@angular/core';
+import { Injectable} from './import.service';
 
-import {Observable} from 'rxjs';
+
 import Web3 from 'web3';
 
 declare let require: any;
