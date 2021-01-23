@@ -5,13 +5,14 @@
             <div class="col-md-12">
                 <div>
                     <ul class="list-group">
-                        <app-house *ngFor="let house of houses; let i = index"
-                        [index]="i"
+                        <app-house *ngFor="let house of houses;"
+                        [index]="house.id"
                         [title]="house.title"
                         [owner]="house.owner"
-                        [adress]="house.adress"
+                        [adress]="house.location"
                         [price]="house.price"
-                        [picture]="house.picture"></app-house>
+                        [picture]="house.pictureUrl"
+                        [purchased]="house.purchased"></app-house>
                     </ul>
                 </div>
             </div>

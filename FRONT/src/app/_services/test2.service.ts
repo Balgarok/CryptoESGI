@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { switchMap, map, tap } from 'rxjs/operators';
 
 const marketPlaceArtifacts = require('../../../../build/contracts/MarketPlace.json');
 
@@ -6,12 +8,15 @@ declare var require:any;
 const Web3 = require('web3');
 declare let window: any;
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class Test2Service {
-
+  account: any = null;
   private messageResult: any;
+  private marketPlace: any;
+  totalProduct: any = [];
 
   constructor() {
   }
@@ -55,11 +60,32 @@ export class Test2Service {
         .then((netId: any) => {
           networkId = netId;
           const abi = marketPlaceArtifacts.abi;
+          console.log(abi);
           const networkAddress = marketPlaceArtifacts.networks[networkId].address;
-          const marketplace = new web3.eth.Contract(abi, networkAddress);
-          resolve(marketplace);
+          this.marketPlace = new web3.eth.Contract(abi, networkAddress);
+          resolve(this.marketPlace);
         });
     });
+  }
+  public async getAccount(): Promise<any> {
+    if (this.account == null) {
+      this.account = await new Promise((resolve, reject) => {
+        window.web3.eth.getAccounts((err:any, retAccount:any) => {
+          if (retAccount.length > 0) {
+            this.account = retAccount[0];
+            resolve(this.account);
+          } else {
+            alert('web3.service :: getAccount :: no accounts found.');
+            reject('No accounts found.');
+          }
+          if (err != null) {
+            alert('web3.service :: getAccount :: error retrieving account');
+            reject('Error retrieving account');
+          }
+        });
+      }) as Promise<any>;
+    }
+    return Promise.resolve(this.account);
   }
 
   public convertPriceToEther(price:number) {
@@ -83,5 +109,42 @@ export class Test2Service {
     });
 
   }
+  public sellRealty(title:string, description:string, price: number,  location: string, size: number, nbRoom: number, nbBedroom: number,pictureUrl$:Observable<String>){
+    const web3 = window.web3;
 
+
+    pictureUrl$.subscribe(value=>{
+      const pictureUrl=value
+      web3.eth.getAccounts().then((accounts:any) =>
+      {
+        this.getContract()
+        .then((contractRes: any) => {
+          this.marketPlace = contractRes;
+          console.log("hellloooo"+contractRes)
+          this.marketPlace.methods.sell(title, description,location,size, nbRoom, nbBedroom, price, pictureUrl)
+              .send({from: accounts[0]})
+              .once('receipt', (receipt:any) => {
+              this.totalProduct.push(receipt.events.RealtyCreated.returnValues);
+
+              });
+        });
+
+      });
+    });
+
+    //console.log(this.account)
+    /*this.marketPlace.methods.sell(title, description,location,size, nbRoom, nbBedroom, price, "")
+      .send({from: "0x759F4183be9C9f2F0814Cef8132c8C31A8da58e8"})
+      .once('receipt', (receipt:any) => {
+        this.totalProduct.push(receipt.events.RealtyCreated.returnValues);
+        //this.show = false;
+      });*/
+  }
+  public getImage(){
+
+  }
+  public loggin(address:String){
+    const web3 = window.web3;
+    web3.eth.sign("steph",address)
+  }
 }

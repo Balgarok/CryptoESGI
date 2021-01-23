@@ -8,7 +8,9 @@ import { HeaderComponent } from './framework-components/header/header.component'
 import { FooterComponent } from './framework-components/footer/footer.component';
 import { FourOhFourComponent } from './framework-components/four-oh-four/four-oh-four.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule , BUCKET} from '@angular/fire/storage';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

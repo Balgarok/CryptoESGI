@@ -3,8 +3,26 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig:  {
+    apiKey: "AIzaSyB15chCjmRBhBONMZputhVg83PPJEYFrEU",
+    authDomain: "blockchain-esgi.firebaseapp.com",
+    projectId: "blockchain-esgi",
+    storageBucket: "blockchain-esgi.appspot.com",
+    messagingSenderId: "1027688625767",
+    appId: "1:1027688625767:web:a66bfd85aed98a94cf86c2"
+  }
 };
+var firebaseConfig = {
+  apiKey: "AIzaSyB15chCjmRBhBONMZputhVg83PPJEYFrEU",
+  authDomain: "blockchain-esgi.firebaseapp.com",
+  projectId: "blockchain-esgi",
+  storageBucket: "blockchain-esgi.appspot.com",
+  messagingSenderId: "1027688625767",
+  appId: "1:1027688625767:web:a66bfd85aed98a94cf86c2"
+};
+// Initialize Firebase
+//firebase.initializeApp(firebaseConfig);
 
 /*
  * For easier debugging in development mode, you can import the following file

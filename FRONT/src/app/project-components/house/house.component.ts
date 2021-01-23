@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { Test2Service } from '../../_services/test2.service';
+
 @Component({
   selector: 'app-house',
   templateUrl: './house.component.html',
@@ -13,10 +15,13 @@ export class HouseComponent implements OnInit {
   @Input() adress: string = '';
   @Input() price: string = '';
   @Input() picture: string = '';
+  @Input() purchased: string = '';
 
-  constructor() { }
+  constructor(private testService: Test2Service) { }
 
   ngOnInit(): void {
   }
-
+  public convertEtherToPrice(value:string):string{
+    return this.testService.convertEtherToPrice(parseInt(value))
+  }
 }

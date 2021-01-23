@@ -7,34 +7,37 @@ export class HouseService {
 
   houses = [
     {
+      id: 0,
       title: 'Un bel appartement',
       owner: 'Moi',
       adress: '120 rue Pasteur',
-      price: '150',
+      price: 150,
       picture: 'bel-appartement.webp',
-      size: '60',
+      size: 60,
       nbBedRoom: '2',
       nbRoom: '4',
       about: 'Bel appartement, lumineux. Avec décor epuré et élégant !',
     },
     {
+      id: 1,
       title: 'Petit nid douillet',
       owner: 'Maître Corbeau',
       adress: 'Sur un arbre perché',
-      price: '1',
+      price: 1,
       picture: 'nid.jpeg',
-      size: '0.5',
+      size: 0.5,
       nbBedRoom: '1',
       nbRoom: '1',
       about: 'Cui cui cui cui, cui cui ? CUI !'
     },
     {
+      id: 2,
       title: 'Case Bleue',
       owner: 'Monopoly',
       adress: 'Rue de la Paix',
-      price: '400',
+      price: 400,
       picture: 'rue-de-la-paix.jpeg',
-      size: '100',
+      size: 100,
       nbBedRoom: '7',
       nbRoom: '10',
       about: 'J\'espère que vous l\'achèterez avant de tomber dessus'
