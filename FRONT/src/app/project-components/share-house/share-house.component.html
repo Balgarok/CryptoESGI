@@ -8,7 +8,7 @@
                     <div class="form-group">
                       <label for="title">Photo</label>
                       <br>
-                      <input type="file"  accept="image/x-png,image/jpeg,image/jpg" (change)="onFileChanged($event)">
+                      <input type="file"  accept="image/x-png,image/jpeg,image/jpg,image/jfif" (change)="onFileChanged($event)">
 
                     </div>
 
@@ -16,10 +16,10 @@
                         <label for="title">Titre</label>
                         <input type="text" class="form-control" id="title" formControlName="title" placeholder='Maison Blanche'>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="owner">Propriétaire</label>
                         <input type="text" class="form-control" id="owner" formControlName="owner" placeholder='Moi'>
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label for="adress">Adresse</label>
                         <input type="text" class="form-control" id="adress" formControlName="adress" placeholder="1600 Pennsylvania Ave NW, Washington, DC 20500, États-Unis.">

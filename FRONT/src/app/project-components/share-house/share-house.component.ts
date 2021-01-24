@@ -30,7 +30,7 @@ export class ShareHouseComponent implements OnInit {
     balance: any;
     pictureUrl!:Observable<String>;
 
-  constructor(private houseService: HouseService, private formBuilder: FormBuilder,private router: Router, private testService: Test2Service, private storage: AngularFireStorage) { }
+  constructor(private houseService: HouseService, private formBuilder: FormBuilder, private testService: Test2Service, private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -41,7 +41,7 @@ export class ShareHouseComponent implements OnInit {
   initForm(){
     this.houseForm = this.formBuilder.group({
       title: ['', Validators.required],
-      owner: ['', Validators.required],
+     // owner: ['', Validators.required],
       adress: ['', Validators.required],
       price: ['', Validators.required],
       size: ['', Validators.required],
@@ -55,7 +55,7 @@ export class ShareHouseComponent implements OnInit {
     const formValue = this.houseForm?.value;
     const newHouse = new House(
       formValue['title'],
-      formValue['owner'],
+      //formValue['owner'],
       formValue['adress'],
       formValue['price'],
       formValue['size'],
@@ -66,7 +66,7 @@ export class ShareHouseComponent implements OnInit {
 
     //this.houseService.addHouse(newHouse);
     this.sellRealty(formValue['title'],formValue['about'],formValue['price'],formValue['adress'],formValue['size'],formValue['nbRoom'],formValue['nbBedRoom']);
-    this.router.navigate(['/home']);
+
   }
   private sellRealty(title:string, description:string, price: number,  location: string, size: number, nbRoom: number, nbBedroom: number) {
     console.log(title+location+description+price+size+nbBedroom+nbRoom)

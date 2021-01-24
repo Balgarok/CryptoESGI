@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { switchMap, map, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 const marketPlaceArtifacts = require('../../../../build/contracts/MarketPlace.json');
 
@@ -18,7 +19,7 @@ export class Test2Service {
   private marketPlace: any;
   totalProduct: any = [];
 
-  constructor() {
+  constructor(private readonly router: Router) {
   }
 
   public checkAndInstantiateWeb3(): Promise<string> {
@@ -125,7 +126,7 @@ export class Test2Service {
               .send({from: accounts[0]})
               .once('receipt', (receipt:any) => {
               this.totalProduct.push(receipt.events.RealtyCreated.returnValues);
-
+              this.router.navigateByUrl('/');
               });
         });
 
