@@ -1,4 +1,4 @@
-import { ChangeDetectorRef,Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { House } from 'src/app/_models/house.model';
 import { HouseService } from 'src/app/_services/house.service';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -18,23 +18,23 @@ export class HomeComponent implements OnInit {
   productName: any;
   productPrice: any;
   show = true;
-  totalProduct:any[] = [];
+  totalProduct: any[] = [];
   private marketPlace: any;
   balance: any;
-  constructor(private testService: Test2Service, private cd: ChangeDetectorRef,private storage: AngularFireStorage) { }
+  constructor(private testService: Test2Service, private cd: ChangeDetectorRef, private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
     this.testService.checkAndInstantiateWeb3()
-    .then((checkConn: any) => {
-      if (checkConn === 'connected') {
-        this.testService.loadBlockChainData()
-          .then((accountData: any) => {
-            this.accountNumber = accountData[0];
-            this.testService.getEtherBalance(this.accountNumber)
-              .then((data: any) => {
-                this.balance = Number(data).toFixed(2);
-                console.log(data);
-              });
+      .then((checkConn: any) => {
+        if (checkConn === 'connected') {
+          this.testService.loadBlockChainData()
+            .then((accountData: any) => {
+              this.accountNumber = accountData[0];
+              this.testService.getEtherBalance(this.accountNumber)
+                .then((data: any) => {
+                  this.balance = Number(data).toFixed(2);
+                  console.log(data);
+                });
               this.testService.getContract()
                 .then((contractRes: any) => {
                   if (contractRes) {
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
                     console.log(this.marketPlace)
                     this.marketPlace.methods.itemCount()
                       .call()
-                      .then((value:number) => {
+                      .then((value: number) => {
                         for (let i = 1; i <= value; i++) {
                           const product = this.marketPlace.methods.realties(i)
                             .call()
@@ -59,24 +59,24 @@ export class HomeComponent implements OnInit {
                   }
                 });
 
-          }, err => {
-            console.log('account error', err);
-          });
-      }
-    }, err => {
-      alert(err);
-    });
+            }, err => {
+              console.log('account error', err);
+            });
+        }
+      }, err => {
+        alert(err);
+      });
     this.houses = this.getHouses()
   }
-  getHouses():any[]{
+  getHouses(): any[] {
     return this.totalProduct
-    /**public owner?: string,
-        public adress?: string,
-        public price?: number,
-        public size?: number,
-        public nbBedRoom?: string,
-        public nbRoom?: string,
-        public about?: string,
-        public picture = 'image-not-found.jpeg', */
+    public owner?: string,
+  public adress?: string,
+  public price?: number,
+  public size?: number,
+  public nbBedRoom?: string,
+  public nbRoom?: string,
+  public about?: string,
+  public picture = 'image-not-found.jpeg', */
   }
 }
