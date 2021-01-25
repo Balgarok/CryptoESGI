@@ -70,13 +70,13 @@ export class HomeComponent implements OnInit {
   }
   getHouses(): any[] {
     return this.totalProduct
-    public owner?: string,
-  public adress?: string,
-  public price?: number,
-  public size?: number,
-  public nbBedRoom?: string,
-  public nbRoom?: string,
-  public about?: string,
-  public picture = 'image-not-found.jpeg', */
+    /**public owner?: string,
+        public adress?: string,
+        public price?: number,
+        public size?: number,
+        public nbBedRoom?: string,
+        public nbRoom?: string,
+        public about?: string,
+        public picture = 'image-not-found.jpeg', */
   }
 }
